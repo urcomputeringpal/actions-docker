@@ -12,9 +12,9 @@ Opinionated GitHub Actions for common Docker workflows
 
 ## Usage
 
-### Setup
+### Google Container Registry Setup
 
-* If you haven't already, [create a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project) named after your GitHub username.
+* If you haven't already, [create a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project) named after your GitHub username and follow the [Container Registry Quickstart](https://cloud.google.com/container-registry/docs/quickstart#before-you-begin).
 * [Create a Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account) named after your GitHub repository.
 * [Add the _Cloud Build Service Account_](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource) role to this Service Account.
 * [Generate a key for this Service Account](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys). Download a JSON key when prompted.
