@@ -9,8 +9,8 @@ set -e
 
 if [ -n "${GCLOUD_SERVICE_ACCOUNT_KEY}" ]; then
   echo "Logging into gcr.io with GCLOUD_SERVICE_ACCOUNT_KEY..."
-  echo ${GCLOUD_SERVICE_ACCOUNT_KEY} | base64 --decode > key.json
-  gcloud auth activate-service-account --quiet --key-file key.json
+  echo ${GCLOUD_SERVICE_ACCOUNT_KEY} | base64 --decode > /tmp/key.json
+  gcloud auth activate-service-account --quiet --key-file /tmp/key.json
   gcloud auth configure-docker --quiet
 else
   echo "GCLOUD_SERVICE_ACCOUNT_KEY was empty, not performing auth" 1>&2
