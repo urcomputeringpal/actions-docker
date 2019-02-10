@@ -18,7 +18,7 @@ Opinionated GitHub Actions for common Docker workflows
 * [Create a Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account) named after your GitHub repository.
 * [Add the _Cloud Build Service Account_](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource) role to this Service Account.
 * [Generate a key for this Service Account](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys). Download a JSON key when prompted.
-* Create a Secret on your repository named `GCLOUD_AUTH` (Settings > Secrets) with the contents of:
+* Create a Secret on your repository named `GCLOUD_SERVICE_ACCOUNT_KEY` (Settings > Secrets) with the contents of:
 
 ```shell
 echo -n "$(cat path-to/downloaded-key/4a276e9e5862.json)" | base64
@@ -39,14 +39,14 @@ workflow { "build and push images for each commit"
 action "docker build" {
   uses = "urcomputeringpal/docker-actions@master"
   args = "build"
-  secrets = ["GCLOUD_AUTH"]
+  secrets = ["GCLOUD_SERVICE_ACCOUNT_KEY"]
 }
 
 action "docker push" {
   uses = "urcomputeringpal/docker-actions@master"
   needs = "docker build"
   args = "push"
-  secrets = ["GCLOUD_AUTH"]
+  secrets = ["GCLOUD_SERVICE_ACCOUNT_KEY"]
 }
 ```
 
