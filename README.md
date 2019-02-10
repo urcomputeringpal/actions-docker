@@ -1,4 +1,4 @@
-# docker-actions
+# actions-docker
 
 Opinionated GitHub Actions for common Docker workflows
 
@@ -37,13 +37,13 @@ workflow { "build and push images for each commit"
 }
 
 action "docker build" {
-  uses = "urcomputeringpal/docker-actions@master"
+  uses = "urcomputeringpal/actions-docker@master"
   args = "build"
   secrets = ["GCLOUD_SERVICE_ACCOUNT_KEY"]
 }
 
 action "docker push" {
-  uses = "urcomputeringpal/docker-actions@master"
+  uses = "urcomputeringpal/actions-docker@master"
   needs = "docker build"
   args = "push"
   secrets = ["GCLOUD_SERVICE_ACCOUNT_KEY"]
