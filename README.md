@@ -4,11 +4,11 @@ Opinionated GitHub Actions for common Docker workflows
 
 ## Opinions (expressed via default environment variables)
 
-* REGISTRY=[gcr.io](https://gcr.io]
-* IMAGE=$GITHUB_REPOSITORY
+* [`REGISTRY=gcr.io`](https://gcr.io)
+* `IMAGE=$GITHUB_REPOSITORY`
   * (Expects a Google Cloud Project named after your GitHub username)
-* TAG=$GITHUB_SHA
-* DEFAULT_BRANCH_TAG=true
+* `TAG=$GITHUB_SHA`
+* `DEFAULT_BRANCH_TAG=true`
 
 ## Usage
 
